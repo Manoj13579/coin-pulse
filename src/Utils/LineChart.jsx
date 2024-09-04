@@ -4,7 +4,7 @@ import Chart from 'react-google-charts';
 
 // historicalData passed as props
 const LineChart = ({historicalData}) => {
-console.log(historicalData);
+(historicalData);
 
 /* react-google-charts expects the data to be provided in a two-dimensional array format.
 The first inner array (i.e., ['Date', 'Prices']) represents the header row, which defines the names of the columns in the chart. In this case, "Date" will be the label for the x-axis and "Prices" for the y-axis.
@@ -39,6 +39,12 @@ let dataCopy = [['Date', 'Prices']];
 
 if(historicalData.prices) {
     historicalData.prices.map((item) => {
+      /*prices is array that holds two data first timestamp and second prices in array so data is array inside prices array like below. so need to access lik item[0] for date and item[1] for prices
+[
+  [1693708800000, 50000],
+  [1693795200000, 50500],
+  [1693881600000, 51000]
+] */
         // item[0] is date from historicalData
         // toLocaleDateString().slice to change date te string and get just month and day.
         // item[0] pushed to Date whereas item[1] pushed to Prices in dataCopy
@@ -49,11 +55,12 @@ if(historicalData.prices) {
 }, [historicalData]);
 
   return (
-    // using css and format provided by Chart
+    // using css format provided by Chart
     <Chart
       chartType="LineChart"
       data={data}
       height="100%"
+      width="60%"
       legendToggle
     />
   )

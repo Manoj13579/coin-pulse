@@ -18,9 +18,8 @@ const SearchResult = () => {
     (state) => state.getAllCrypto.currencySymbols
   );
   const currency = useSelector((state) => state.getAllCrypto.currency);
-  console.log("currency", currency);
-  console.log("historicalData", historicalData);
-  console.log(searchedCrypto);
+  ("historicalData", historicalData);
+  
 
   const getHistoricalData = async (currency) => {
     setLoading(true);
@@ -37,13 +36,10 @@ const SearchResult = () => {
           }
         );
         setHistoricalData(response.data);
-        toast.success("successfully fetched historical data");
       } catch (error) {
         console.error(error);
         toast.error("error in fetching data. try again");
       }
-    } else {
-      toast.error("no currency selected to show data");
     }
     setLoading(false);
   };
@@ -62,7 +58,7 @@ const SearchResult = () => {
             {searchedCrypto?.name + "-" + searchedCrypto?.symbol.toUpperCase()}
           </p>
         </div>
-        <div className="p-4">
+        <div className="flex items-center justify-center">
           {historicalData && (
             <LineChart
             historicalData={historicalData}
@@ -70,7 +66,7 @@ const SearchResult = () => {
           )
           }
         </div>
-        <div className="flex items-center justify-center flex-col gap-4 text-teal-300">
+        <div className="flex items-center justify-center flex-col gap-4 text-teal-300 p-4">
           <ul className="flex gap-2">
             <li>Crypto Market Cap Rank -</li>
             <li>{searchedCrypto?.market_cap_rank}</li>
