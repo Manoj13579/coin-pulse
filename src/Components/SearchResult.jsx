@@ -51,14 +51,14 @@ const SearchResult = () => {
   return (
     <>
       {loading && <Loader />}
-      <section className="bg-slate-900">
+      <section className="bg-slate-900 p-4">
         <div className="bg-slate-900 flex items-center justify-center flex-col">
           <img src={searchedCrypto?.image} className="h-28 w-28" />
           <p className=" text-teal-300 font-semibold text-2xl">
             {searchedCrypto?.name + "-" + searchedCrypto?.symbol.toUpperCase()}
           </p>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="w-4/5 m-auto">
           {historicalData && (
             <LineChart
             historicalData={historicalData}
@@ -66,24 +66,24 @@ const SearchResult = () => {
           )
           }
         </div>
-        <div className="flex items-center justify-center flex-col gap-4 text-teal-300 p-4">
-          <ul className="flex gap-2">
+        <div className="flex items-center justify-center flex-col gap-4 text-teal-300 mt-4">
+          <ul className="flex gap-1">
             <li>Crypto Market Cap Rank -</li>
             <li>{searchedCrypto?.market_cap_rank}</li>
           </ul>
-          <ul className="flex gap-2">
+          <ul className="flex gap-1">
             <li>Current Price -</li>
             <li>{currencysymbols} {searchedCrypto?.current_price.toLocaleString()}</li>
           </ul>
-          <ul className="flex gap-2">
+          <ul className="flex gap-1">
             <li>Market Cap -</li>
             <li>{currencysymbols} {searchedCrypto?.market_cap.toLocaleString()}</li>
           </ul>
-          <ul className="flex gap-2">
+          <ul className="flex gap-1">
             <li>24H High -</li>
             <li>{currencysymbols} {searchedCrypto?.high_24h.toLocaleString()}</li>
           </ul>
-          <ul className="flex gap-2">
+          <ul className="flex gap-1">
             <li>24H Low -</li>
             <li>{currencysymbols} {searchedCrypto?.low_24h.toLocaleString()}</li>
           </ul>

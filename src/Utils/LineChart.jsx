@@ -60,7 +60,6 @@ if(historicalData.prices) {
       chartType="LineChart"
       data={data}
       height="100%"
-      width="60%"
       legendToggle
     />
   )
