@@ -18,7 +18,7 @@ const getAllCrypto = createAsyncThunk('crypto/get', async (currency) => {
     const response = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}`, {
       headers: {
         accept: 'application/json',
-        'x-cg-demo-api-key': 'CG-u4oatFacLBnJXLZtvwVWjtt5'
+        'x-cg-demo-api-key': import.meta.env.API_KEY,
       }
     });
     // Return both data and currency to get currencySymbols by currency for extraReducers

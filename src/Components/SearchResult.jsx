@@ -32,7 +32,7 @@ const SearchResult = () => {
           {
             headers: {
               accept: "application/json",
-              "x-cg-demo-api-key": "CG-u4oatFacLBnJXLZtvwVWjtt5",
+              "x-cg-demo-api-key": import.meta.env.API_KEY,
             },
           }
         );
