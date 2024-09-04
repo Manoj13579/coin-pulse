@@ -53,7 +53,7 @@ const SearchResult = () => {
       {loading && <Loader />}
       <section className="bg-slate-900 p-4">
         <div className="bg-slate-900 flex items-center justify-center flex-col">
-          <img src={searchedCrypto?.image} className="h-28 w-28" />
+          <img src={searchedCrypto?.image} className="max-h-28 max-w-28" />
           <p className=" text-teal-300 font-semibold text-2xl">
             {searchedCrypto?.name + "-" + searchedCrypto?.symbol.toUpperCase()}
           </p>
