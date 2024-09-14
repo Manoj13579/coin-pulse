@@ -1,3 +1,5 @@
+/* in using tailwind h1 h2 ... don't work */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

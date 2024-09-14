@@ -7,6 +7,7 @@ import {
 import Layout from "./Components/Layout/Layout";
 import CryptoTable from "./Components/Layout/CryptoTable";
 import SearchResult from "./Components/SearchResult";
+import NotFound from "./Components/NotFound";
 
 
   const router = createBrowserRouter(
@@ -20,6 +21,7 @@ import SearchResult from "./Components/SearchResult";
         }
         />
         <Route path="search-result/:id" element={<SearchResult />} />
+        <Route path="*" element={<NotFound />} />
         </Route>
     )
   )
