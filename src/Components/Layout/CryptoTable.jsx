@@ -60,7 +60,7 @@ const handleSubmit = async (e) => {
         </span>
         <div className="flex items-center">
         <input
-          className="placeholder:italic placeholder:text-slate-400 block bg-white w-60 h-10 sm:w-96 border-2 border-slate-400 rounded-md rounded-r-none border-r-0 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 sm:text-sm  text-slate-400"
+          className="placeholder:italic placeholder:text-slate-400 block bg-white h-10  w-60 md:w-96  border-2 border-slate-400 rounded-md rounded-r-none border-r-0 py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-cyan-500 focus:ring-cyan-500 focus:ring-1 text-sm md:text-base  text-slate-400"
           placeholder="Search Crypto Currency..."
           required
           type="text"
